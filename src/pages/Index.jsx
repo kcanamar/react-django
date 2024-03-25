@@ -1,12 +1,9 @@
 import Turtle from "../components/Turtle"
+import { useLoaderData } from "react-router-dom"
 
 export default function Index(props){
     
-    return (
-        <div>
-            <h1>Index</h1>
-            <hr />
-            <Turtle donny="donny"/>
-        </div>
-    )
+    const allPets = useLoaderData()
+
+    return allPets.map((pet, i) => <Turtle pet={pet} key={i} />)
 }
