@@ -4,7 +4,6 @@ const URL=import.meta.env.VITE_BASE_URL
 
 // createAction will create a pet from form submission to /create
 export const createAction = async ({request}) => {
-    console.log("here")
     // get the form data
     const formData = await request.formData()
     
@@ -56,6 +55,7 @@ export const updateAction = async ({request, params}) => {
 
 // deleteAction delete a pet from form submissions to `/delete/:id`
 export const deleteAction = async ({params}) => {
+    console.log("here")
     // get pet id
     const id = params.id
     // send the request to the backend
